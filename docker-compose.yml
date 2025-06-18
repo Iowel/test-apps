@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:17.4-alpine3.21
+    container_name: postgres-db 
+    environment:
+      POSTGRES_DB: social
+      POSTGRES_USER: postgres 
+      POSTGRES_PASSWORD: 1234
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  db-data:

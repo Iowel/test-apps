@@ -1,0 +1,221 @@
+
+
+###
+curl -X GET http://localhost:8080/v1/health
+  -H "Content-Type: application/json" \
+  -H "Authorization: Basic JHPW5APSL5EUHP63XC7IQFDUS4" \
+
+
+
+
+###
+curl -X POST http://localhost:8080/v1/posts
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJnb3BoZXJzb2NpYWwiLCJleHAiOjE3NTA0MzM5ODcsImlhdCI6MTc1MDE3NDc4NywiaXNzIjoiZ29waGVyc29jaWFsIiwibmJmIjoxNzUwMTc0Nzg3LCJzdWIiOjI1fQ.YzB266uA3rxtwe3r2AvWfyqh-Gw3_YpotElGYUhudOA" \
+  -d '{
+        "title": "awsws2swad",
+        "content": "12345",
+        "tags": ["tag1"]
+      }'
+
+
+
+
+###
+curl -X GET http://localhost:8080/v1/posts/7 \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJnb3BoZXJzb2NpYWwiLCJleHAiOjE3NTA0MzM5NTksImlhdCI6MTc1MDE3NDc1OSwiaXNzIjoiZ29waGVyc29jaWFsIiwibmJmIjoxNzUwMTc0NzU5LCJzdWIiOjI1fQ.QbNV_E3rc7R3psE_j1DHYPzg6sDDfmK-c5-Z6_bSnYs" \
+
+
+
+###
+curl -X DELETE http://localhost:8080/v1/posts/12
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJnb3BoZXJzb2NpYWwiLCJleHAiOjE3NTA0Mjc3MDcsImlhdCI6MTc1MDE2ODUwNywiaXNzIjoiZ29waGVyc29jaWFsIiwibmJmIjoxNzUwMTY4NTA3LCJzdWIiOjI1fQ.1r1Xj-Oa2rXR1hja0BGBcVQCj_zBJUyUz2gBPbxuagA" \
+
+
+
+
+###
+curl -X PATCH http://localhost:8080/v1/posts/10
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJnb3BoZXJzb2NpYWwiLCJleHAiOjE3NTA0Mjc3MDcsImlhdCI6MTc1MDE2ODUwNywiaXNzIjoiZ29waGVyc29jaWFsIiwibmJmIjoxNzUwMTY4NTA3LCJzdWIiOjI1fQ.1r1Xj-Oa2rXR1hja0BGBcVQCj_zBJUyUz2gBPbxuagA" \
+  -d '{
+        "content": "fffFfFff",
+        "title": "AAAAAAAAA"
+      }'
+
+
+
+
+
+
+###
+curl -X GET http://localhost:8080/v1/users/25
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJnb3BoZXJzb2NpYWwiLCJleHAiOjE3NTA0MzM5ODcsImlhdCI6MTc1MDE3NDc4NywiaXNzIjoiZ29waGVyc29jaWFsIiwibmJmIjoxNzUwMTc0Nzg3LCJzdWIiOjI1fQ.YzB266uA3rxtwe3r2AvWfyqh-Gw3_YpotElGYUhudOA" \
+
+
+
+
+
+###
+curl -X PUT http://localhost:8080/v1/users/2/follow
+  -H "Content-Type: application/json" \
+ -d '{
+        "user_id": 1
+      }'
+
+###
+curl -X PUT http://localhost:8080/v1/users/1/unfollow
+  -H "Content-Type: application/json" \
+ -d '{
+        "user_id": 1
+      }'
+
+
+
+
+
+###
+curl -X GET http://localhost:8080/v1/users/feed?tags=food
+  -H "Content-Type: application/json" \
+ -d '{
+        "user_id": 1
+      }'
+
+
+
+###
+curl -X POST http://localhost:8080/v1/authentication/user
+  -H "Content-Type: application/json" \
+ -d '{
+        "email": "wdawdsdwdfad@awdawdl.com",
+        "password": "1234567",
+        "username": "VVVasddfawdwdadsddwdawdVVVVVVVVVV2"
+      }'
+
+
+
+###
+curl -X GET http://localhost:8080/v1/users/activate/66562187-b6b9-4d42-8e4c-5552e4f0ef96
+
+
+###
+curl -X POST http://localhost:8080/v1/authentication/token
+  -H "Content-Type: application/json" \
+ -d '{
+        "email": "wdawdsdwdfad@awdawdl.com",
+        "password": "1234567"
+      }'
+
+
+
+
+
+
+
+
+
+
+
+###
+curl -X POST http://localhost:8081/api/authenticate
+  -H "Content-Type: application/json" \
+  -d '{
+        "email": "John1.ru",
+        "password": "12345"
+      }'
+
+
+###
+curl -X POST http://localhost:8081/api/is-authenticated \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer VRRTRNQ4ZAX37QL6GDWPMLQK5U" \
+
+
+
+
+###
+curl -X GET http://localhost:8081/api/admin/test \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer JHPW5APSL5EUHP63XC7IQFDUS4" \
+
+
+
+###
+curl -X GET http://localhost:8081/api/get-all-users
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOBSMAR7KJPTYMGCDASIZIVB5E" \
+
+
+
+###
+curl -X GET http://localhost:8081/add-friends/1
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer LM3ZWGVDJT7G5RHEP77WHOEYGA" \
+
+
+
+###
+curl -X GET http://localhost:8081/api/get-profile \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer 7WJHWENDJXY4HB4SWXSTQPWXM4" \
+
+
+###
+curl -X POST http://localhost:8081/api/get-all-users/4
+
+
+###
+curl -X GET http://localhost:8081/api/profile/5
+
+
+###
+curl -X GET http://localhost:8081/api/get-backdoor
+
+
+
+
+###
+curl -X GET http://localhost:8081/api/get-profile
+
+
+
+
+###
+curl -X GET http://localhost:8081/api/all-posts
+
+
+###
+curl -X GET http://localhost:8087/v1/orders/user/1
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer JFZOLQG2WPJUIV7P6OHXXVRKEM" \
+
+
+###
+curl -X GET http://localhost:8081/api/update-user \
+  -H "Content-Type: application/json" \
+  -d '{
+        "id": 3,
+        "email": "test@m.r",
+        "password": "12345",
+        "name": "test"
+      }'
+
+
+###
+curl -X GET http://localhost:8081/api/delete-user/1
+
+
+
+###
+curl -X POST  http://localhost:8081/api/update-user/0 \
+  -H "Content-Type: application/json" \
+  -d '{
+        "email": "test@m.r",
+        "password": "12345",
+        "name": "test"
+      }'
+
+
