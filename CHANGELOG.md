@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/Iowel/test-apps/compare/v1.0.0...v1.1.0) (2025-06-18)
+
+
+### Features
+
+* update api version twoooo ([b94c9cd](https://github.com/Iowel/test-apps/commit/b94c9cdb2f6dd8ba5c7ad6e6d77554662dffe67b))
+
 ## 1.0.0 (2025-06-18)
 
 
