@@ -23,7 +23,7 @@ func (m *MockUserStore) Create(ctx context.Context, tx *sql.Tx, u *User) error {
 }
 
 func (m *MockUserStore) GetByID(ctx context.Context, userID int64) (*User, error) {
-	return &User{}, nil
+	return &User{ID: 1}, nil
 }
 
 func (m *MockUserStore) CreateAndInvite(ctx context.Context, user *User, token string, invitationExp time.Duration) error {
@@ -39,5 +39,5 @@ func (m *MockUserStore) Delete(ctx context.Context, userID int64) error {
 }
 
 func (m *MockUserStore) GetByEmail(ctx context.Context, email string) (*User, error) {
-	return &User{}, nil
+	return &User{ID: 1}, nil
 }

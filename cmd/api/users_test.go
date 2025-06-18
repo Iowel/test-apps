@@ -15,7 +15,7 @@ func TestGetUser(t *testing.T) {
 	}
 
 	t.Run("should not allow unauthenticated requests", func(t *testing.T) {
-		req, err := http.NewRequest(http.MethodPost, "/v1/users/1", nil)
+		req, err := http.NewRequest(http.MethodPost, "/v1/users/25", nil)
 		if err != nil {
 			t.Fatal(err)
 		}
@@ -26,7 +26,7 @@ func TestGetUser(t *testing.T) {
 	})
 
 	t.Run("should allow authenticated requests", func(t *testing.T) {
-		req, err := http.NewRequest(http.MethodPost, "/v1/users/1", nil)
+		req, err := http.NewRequest(http.MethodGet, "/v1/users/6", nil)
 		if err != nil {
 			t.Fatal(err)
 		}
