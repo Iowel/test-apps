@@ -135,7 +135,9 @@ func (app *application) mount() http.Handler {
 				r.Delete("/", app.checkPostOwnership("admin", app.deletePostHandler))
 			})
 		})
+  
 
+		
 		r.Route("/users", func(r chi.Router) {
 			r.Get("/activate/{token}", app.activateUserHandler)
 
