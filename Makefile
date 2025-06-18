@@ -31,6 +31,6 @@ git push
 
 git add .
 git commit -m "feat: release please script"
-git push origin main
+git push
 
 
