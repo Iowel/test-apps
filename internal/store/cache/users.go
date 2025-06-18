@@ -4,8 +4,9 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/Iowel/test-apps/internal/store"
 	"time"
+
+	"github.com/Iowel/test-apps/internal/store"
 
 	"github.com/go-redis/redis/v8"
 )

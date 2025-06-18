@@ -1,10 +1,10 @@
 package main
 
 import (
-	"context"
 	"net/http"
-	"github.com/Iowel/test-apps/internal/store"
 	"strconv"
+
+	"github.com/Iowel/test-apps/internal/store"
 
 	"github.com/go-chi/chi/v5"
 )
@@ -102,33 +102,33 @@ func (app *application) unFollowUserHandler(w http.ResponseWriter, r *http.Reque
 	}
 }
 
-func (app *application) userContextMiddleware(next http.Handler) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		userID, err := strconv.ParseInt(chi.URLParam(r, "userID"), 10, 64)
-		if err != nil {
-			app.badRequestResponse(w, r, err)
-			return
-		}
+// func (app *application) userContextMiddleware(next http.Handler) http.Handler {
+// 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+// 		userID, err := strconv.ParseInt(chi.URLParam(r, "userID"), 10, 64)
+// 		if err != nil {
+// 			app.badRequestResponse(w, r, err)
+// 			return
+// 		}
 
-		ctx := r.Context()
+// 		ctx := r.Context()
 
-		user, err := app.store.Users.GetByID(ctx, userID)
-		if err != nil {
-			switch err {
-			case store.ErrNotFound:
-				app.notFoundResponse(w, r, err)
-				return
-			default:
-				app.statusInternalServerError(w, r, err)
-				return
-			}
-		}
+// 		user, err := app.store.Users.GetByID(ctx, userID)
+// 		if err != nil {
+// 			switch err {
+// 			case store.ErrNotFound:
+// 				app.notFoundResponse(w, r, err)
+// 				return
+// 			default:
+// 				app.statusInternalServerError(w, r, err)
+// 				return
+// 			}
+// 		}
 
-		ctx = context.WithValue(ctx, userCtx, user)
+// 		ctx = context.WithValue(ctx, userCtx, user)
 
-		next.ServeHTTP(w, r.WithContext(ctx))
-	})
-}
+// 		next.ServeHTTP(w, r.WithContext(ctx))
+// 	})
+// }
 
 func getUserFromContext(r *http.Request) *store.User {
 	user, _ := r.Context().Value(userCtx).(*store.User)
