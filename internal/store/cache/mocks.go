@@ -18,13 +18,13 @@ func NewMockStore() Storage {
 	}
 }
 
-func (m MockUserStore) Get(ctx context.Context, userID int64) (*store.User, error) {
+func (m *MockUserStore) Get(ctx context.Context, userID int64) (*store.User, error) {
 	args := m.Called(userID)
 
 	return nil, args.Error(1)
 }
 
-func (m MockUserStore) Set(ctx context.Context, user *store.User) error {
+func (m *MockUserStore) Set(ctx context.Context, user *store.User) error {
 	args := m.Called(user)
 
 	return args.Error(0)
